@@ -12,6 +12,12 @@
     <title>Title</title>
 </head>
 <body>
+<c:if test="${empty user.name}">
+    <c:url value="/add" var="var"/>
+</c:if>
+<c:if test="${!empty user.name}">
+    <c:url value="/" var="var"/>
+</c:if>
 <form action="${var}" method="POST">
     <c:if test="${!empty user.name}">
         <input type="hidden" name="id" value="${user.id}">
@@ -24,7 +30,9 @@
     <c:if  test="${empty user.name}">
         <input type="submit" value="Add new klient">
     </c:if>
-
+    <c:if test="${!empty user.name}">
+        <input type="submit" value="Edit ">
+    </c:if>
 </form>
 </body>
 </html>

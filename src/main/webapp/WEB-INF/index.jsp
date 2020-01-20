@@ -13,6 +13,7 @@
         <th>  Имя </th>
         <th> Возраст </th>
         <th>action</th>
+        <th>action</th>
 
     </tr>
 
@@ -22,7 +23,9 @@
         <td>${list.name}</td>
         <td>${list.age}</td>
         <td>
-            <%--<a href="/edit/${users.id}">edit</a>--%>
+            <a href="/edit/${list.id}">edit</a>
+        </td>
+        <td>
             <a href="/delete/${list.id}">delete</a>
         </td>
     </tr>

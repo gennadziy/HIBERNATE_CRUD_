@@ -66,6 +66,22 @@ public class Contr {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public ModelAndView editPage(@PathVariable("id") int id, User user, UserService userService) {
+        ModelAndView modelAndView = new ModelAndView();
+        userService.findUser ( id );
+        modelAndView.setViewName("edit");
+        modelAndView.addObject("user", user);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public ModelAndView editPage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("editPage");
+        return modelAndView;
+    }
+
 
 }
 

@@ -1,7 +1,8 @@
 package gennadziy.models;
+
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table (name = "usr")
@@ -10,9 +11,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @NotNull
     @Column(name = "name")
     private String name;
     //можно не указывать Column name, если оно совпадает с названием столбца в таблице
+    @NotNull
     private int age;
 
     @Override
