@@ -2,10 +2,7 @@ package gennadziy.service;
 
 import gennadziy.DAO.UserDao;
 import gennadziy.models.User;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 public class UserService {

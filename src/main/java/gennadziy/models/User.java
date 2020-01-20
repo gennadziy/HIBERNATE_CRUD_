@@ -15,8 +15,10 @@ public class User {
     @Column(name = "name")
     private String name;
     //можно не указывать Column name, если оно совпадает с названием столбца в таблице
+
     @NotNull
     private int age;
+
 
     @Override
     public String toString () {

@@ -16,6 +16,7 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "gennadziy")
+@PropertySource(value = "classpath:hibernate.properties")
 public class WebConfig implements WebMvcConfigurer {
 
     @Override

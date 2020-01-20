@@ -21,18 +21,9 @@ import java.util.List;
 @PropertySource(value = "classpath:log4j.properties")
 
 public class Contr {
-    private static final Logger logger = LoggerFactory.getLogger(Contr.class);
-    private static final String FILENAME = "C:\\data.txt";
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView name(ModelAndView modelAndView,UserService userService){
-    logger.info ( "{JJFSDHJFJDSJFJDFNJDNFJDNJFDNJFNDKJFNJ");
-    logger.debug ( "свыавыаыв"+userService.findAllUsers ().toString () );
-        try {
-            Files.readAllBytes(Paths.get(FILENAME));
-        } catch (IOException ioex) {
-            logger.error("Failed to read file {}.", FILENAME, ioex);
-        }
     List<User> users=userService.findAllUsers ();
     modelAndView.setViewName ("index");
     System.out.println (users.toString ());
@@ -70,6 +61,7 @@ public class Contr {
     public ModelAndView editPage(@PathVariable("id") int id, User user, UserService userService) {
         ModelAndView modelAndView = new ModelAndView();
         userService.findUser ( id );
+//        userService.updateUser ( user );
         modelAndView.setViewName("edit");
         modelAndView.addObject("user", user);
         return modelAndView;

@@ -33,6 +33,9 @@
     <c:if test="${!empty user.name}">
         <input type="submit" value="Edit ">
     </c:if>
+    <label for="name">Имя</label>
+    <input type="text" name="name" id="name" value="${user.name}">
+
 </form>
 </body>
 </html>
