@@ -1,16 +1,19 @@
 package gennadziy.service;
 
+import gennadziy.DAO.UserDa;
 import gennadziy.DAO.UserDao;
 import gennadziy.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class UserService {
-
-    private UserDao usersDao = new UserDao();
-
-    public UserService() {
-    }
+@Component
+public class UserService implements UserServ {
+@Autowired
+    private UserDa usersDao;
 
     public User findUser(int id) {
         return usersDao.findById(id);
